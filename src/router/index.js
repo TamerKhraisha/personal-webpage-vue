@@ -5,16 +5,13 @@ import Experience from "@/modules/experience/views/experience.vue";
 import Skills from "@/modules/skills/views/skills.vue";
 import academia from "@/modules/academia/views/academia.vue";
 import blog from "@/modules/blog/views/blog.vue";
+const FourOFour = () => import("@/views/The404");
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    redirect: "/home"
-  },
-  {
-    path: "/home",
     name: "home",
     component: Home
   },
@@ -37,11 +34,15 @@ const routes = [
     path: "/blog",
     name: "blog",
     component: blog
+  },
+  {
+    path: "*",
+    name: "notfound",
+    component: FourOFour
   }
 ];
 
 const router = new VueRouter({
-  mode: "history",
   routes
 });
 

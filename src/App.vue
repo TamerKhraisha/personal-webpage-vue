@@ -19,6 +19,7 @@
             class="subtitle-1 font-weight-bold"
             :color="buttonColor"
             text
+            exact
             >Home</v-btn
           >
           <v-btn
