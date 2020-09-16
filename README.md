@@ -2,8 +2,7 @@ My personal webpage
 ======
 This is the official repository for the files I used in building my personal webpage. The webpage is written in Vue and powered by Vuetify.
 
-[Live webpage available here](http://tamerkhraisha.com/#/)
-
+[Live webpage here](http://tamerkhraisha.com)
 
 ![Demo screenshot](src/assets/mainpage.png?raw=true "Title")
 
