@@ -1,4 +1,4 @@
-My personal webpage written in Vue and Vuetify
+My personal webpage
 ======
 This is the official repository for the files I used in building my personal webpage. The webpage is written in Vue and powered by Vuetify.
 
