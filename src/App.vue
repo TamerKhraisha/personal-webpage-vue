@@ -16,39 +16,41 @@
         <div class="d-flex align-center justify-center" style="width:100%">
           <v-btn
             :to="{ name: 'home' }"
-            class="subtitle-1 font-weight-bold"
-            :color="buttonColor"
+            class="subtitle-1"
+            color="white"
             text
             exact
-            >Home</v-btn
+            ><span style="font-family: Francois One !important"
+              >Home</span
+            ></v-btn
           >
           <v-btn
-            class="subtitle-1 font-weight-bold"
+            class="subtitle-1"
             :to="{ name: 'experience' }"
-            :color="buttonColor"
+            color="white"
             text
-            >Experience</v-btn
+            ><span style="font-family: Francois One !important"
+              >Experience</span
+            ></v-btn
           >
-          <v-btn
-            :to="{ name: 'skills' }"
-            class="subtitle-1 font-weight-bold"
-            :color="buttonColor"
-            text
-            >Skills</v-btn
+          <v-btn :to="{ name: 'skills' }" class="subtitle-1" color="white" text
+            ><span style="font-family: Francois One !important"
+              >Skills</span
+            ></v-btn
           >
           <v-btn
             :to="{ name: 'academia' }"
-            class="subtitle-1 font-weight-bold"
-            :color="buttonColor"
+            class="subtitle-1"
+            color="white"
             text
-            >academia</v-btn
+            ><span style="font-family: Francois One !important"
+              >Academia</span
+            ></v-btn
           >
-          <v-btn
-            :to="{ name: 'blog' }"
-            class="subtitle-1 font-weight-bold"
-            :color="buttonColor"
-            text
-            >Blog</v-btn
+          <v-btn :to="{ name: 'blog' }" class="subtitle-1" color="white" text
+            ><span style="font-family: Francois One !important"
+              >Blog</span
+            ></v-btn
           >
         </div>
       </v-toolbar-items>
@@ -104,17 +106,6 @@ export default {
         { name: "blog", icon: "mdi-post" }
       ]
     };
-  },
-  computed: {
-    buttonColor() {
-      if (
-        this.$route.name &&
-        (this.$route.name.includes("post") || this.$route.name.includes("blog"))
-      ) {
-        return "grey";
-      }
-      return "white";
-    }
   }
 };
 </script>

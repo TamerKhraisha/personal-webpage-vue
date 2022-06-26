@@ -5,6 +5,8 @@ import Experience from "@/modules/experience/views/experience.vue";
 import Skills from "@/modules/skills/views/skills.vue";
 import academia from "@/modules/academia/views/academia.vue";
 import blog from "@/modules/blog/views/blog.vue";
+import curriculum from "@/modules/curriculum/views/curriculum.vue";
+
 const FourOFour = () => import("@/views/The404");
 
 Vue.use(VueRouter);
@@ -34,6 +36,11 @@ const routes = [
     path: "/blog",
     name: "blog",
     component: blog
+  },
+  {
+    path: "/cv",
+    name: "cv",
+    component: curriculum
   },
   {
     path: "*",

@@ -2,17 +2,15 @@
   <div>
     <v-content>
       <TopSection />
-      <BlogIterator />
     </v-content>
   </div>
 </template>
 
 <script>
 const TopSection = () => import("../sections/topSection");
-const BlogIterator = () => import("../sections/blogIterator");
 export default {
   name: "Blog",
-  components: { TopSection, BlogIterator }
+  components: { TopSection }
 };
 </script>
 <style scoped>
