@@ -23,44 +23,32 @@
             <v-col v-for="(item, i) in props.items" :key="i" cols="12" md="4">
               <v-hover v-slot:default="{ hover }">
                 <v-card class="mx-auto" color="grey lighten-4" max-width="600">
-                  <a
-                    style="text-decoration:none"
-                    :href="item.link"
-                    target="_blank"
-                  >
-                    <v-img :aspect-ratio="16 / 9" :src="item.src">
-                      <v-expand-transition>
-                        <div
-                          v-if="hover"
-                          :class="[
-                            'px-2',
-                            'd-flex',
-                            'transition-fast-in-fast-out',
-                            ' font-weight-bold',
-                            'cyan darken-2',
-                            'v-card--reveal',
-                            'white--text',
-                            $vuetify.breakpoint.lgAndDown ? 'title' : 'headline'
-                          ]"
-                          style="height: 100%;"
-                        >
-                          {{ item.text }}
-                        </div>
-                      </v-expand-transition>
-                    </v-img>
-                    <v-card-text class="pt-6" style="position: relative;">
-                      <span
+                  <v-img :aspect-ratio="16 / 9" :src="item.src">
+                    <v-expand-transition>
+                      <div
+                        v-if="hover"
                         :class="[
-                          hover ? 'cyan--text' : 'black--text',
-                          $vuetify.breakpoint.lgAndDown
-                            ? 'headline'
-                            : 'display-1'
+                          'px-2',
+                          'd-flex',
+                          'transition-fast-in-fast-out',
+                          ' font-weight-bold',
+                          'cyan darken-2',
+                          'v-card--reveal',
+                          'white--text',
+                          $vuetify.breakpoint.lgAndDown ? 'title' : 'headline'
                         ]"
+                        style="height: 100%;"
                       >
-                        {{ item.title }}
-                      </span>
-                    </v-card-text>
-                  </a>
+                        {{ item.text }}
+                      </div>
+                    </v-expand-transition>
+                  </v-img>
+                  <v-card-text class="pt-6" style="position: relative;">
+                    <visualization-dialog
+                      :visualizationLink="item.link"
+                      :visualizationTitle="item.title"
+                    />
+                  </v-card-text>
                 </v-card>
               </v-hover>
             </v-col>
@@ -97,7 +85,10 @@
   </section>
 </template>
 <script>
+import VisualizationDialog from "../components/VisualizationDialog.vue";
+
 export default {
+  components: { VisualizationDialog },
   data() {
     return {
       itemsPerPage: 3,
@@ -107,7 +98,7 @@ export default {
           title: "Interactive Illustration of the Force Layout in D3.js",
           src: require("@/assets/d3.png"),
           link:
-            "http://tamerkhraisha.com/visualizations/DS_presentation/index.html",
+            "https://d3-visualizations-tk.web.app/DS_presentation/index.html",
           text:
             "D3.js is one of the most powerful options available for producing web-based data visualizations. Here I illustrate how the D3 Force Layout (one of the several domains available in D3.js) works in detail."
         },
@@ -115,14 +106,14 @@ export default {
           title: "Visualization of the Syndicated Lending Market",
           src: require("@/assets/banknotes.jpg"),
           link:
-            "http://tamerkhraisha.com/visualizations/syndicated_loans_bubble_chart/index.html",
+            "https://d3-visualizations-tk.web.app/syndicated_loans_bubble_chart/index.html",
           text:
             "A D3.js interactive visualization illustrating the market share of banks in the syndicated lending market."
         },
         {
           title: "The Network of Associations Between Personality Traits",
           link:
-            "http://tamerkhraisha.com/visualizations/psychological_traits_network/index.html",
+            "https://d3-visualizations-tk.web.app/psychological_traits_network/index.html",
           src: require("@/assets/pencil11.jpg"),
           text:
             "A D3.js interactive visualization of a network created by connecting different personality traits using linear associations."
@@ -131,15 +122,14 @@ export default {
           title: "Evolution of The International Weapon Trade Network",
           src: require("@/assets/weapon.jpg"),
           link:
-            "http://tamerkhraisha.com/visualizations/weapon_trade_network/index.html",
+            "https://d3-visualizations-tk.web.app/weapon_trade_network/index.html",
           text:
             "A D3.js interactive visualization of the temporal evolution of the international weaponn trade among countries."
         },
         {
           title: "Visualizing Graph-Related Attributes of a Financial Network",
           src: require("@/assets/syndicated-graph-attributes.png"),
-          link:
-            "http://tamerkhraisha.com/visualizations/NetworkAttributes.html",
+          link: "https://d3-visualizations-tk.web.app/NetworkAttributes.html",
           text:
             "D3.js is one of the most powerful options available for producing web-based data visualizations. Here I illustrate how the D3 Force Layout (one of the several domains available in D3.js) works in detail."
         }

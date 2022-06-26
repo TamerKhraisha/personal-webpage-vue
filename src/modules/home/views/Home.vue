@@ -19,6 +19,7 @@ const Contact = () => import("../sections/Contact");
 const Footer = () => import("../sections/Footer");
 const LatestUpdates = () => import("../sections/LatestUpdates");
 const Quotes = () => import("../sections/Quotes");
+
 const TopSection = () => import("../sections/TopSection");
 const RecentProjects = () => import("../sections/RecentProjects");
 const InteractiveVisualizations = () =>
