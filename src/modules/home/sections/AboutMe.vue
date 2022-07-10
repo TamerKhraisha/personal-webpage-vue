@@ -24,14 +24,8 @@
               Network Science from the Department of Network and Data Science at
               the Central European University in Budapest. Currently, I am
               employed as a Quantitative Developer NextGateTech, where we are
-              mainly developing
-              <a
-                style="text-decoration: none"
-                href="https://nuvolos.cloud/"
-                target="_blank"
-                >Nuvolos</a
-              >, the knowledge creation cloud, an integrated and unified cloud
-              platform designed for online education and research.
+              developing a cloud-based platform for data oversight and
+              management for the asset management industry.
             </v-responsive>
           </v-col>
         </v-row>
@@ -43,14 +37,14 @@
       <div></div>
 
       <v-btn
-        href="http://www.tamerkhraisha.com/files/curriculum_latest.pdf"
+        href="https://cv.tamerkhraisha.com/"
         target="_blank"
         color="grey"
         outlined
         large
       >
         <span class="grey--text text--darken-1 font-weight-bold">
-          Download My CV
+          View my CV
         </span>
       </v-btn>
     </v-container>
