@@ -17,7 +17,7 @@
       </v-responsive>
       <v-container fill-height>
         <v-row no-gutters justify="center" align="center">
-          <v-col lg="12" cols="11">
+          <v-col cols="11">
             <v-img
               id="budapest-image"
               class="mb-5"
