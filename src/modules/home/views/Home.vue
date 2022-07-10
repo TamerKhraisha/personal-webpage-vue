@@ -14,8 +14,8 @@
 </template>
 
 <script>
-const AboutMe = () => import("../sections/AboutMe");
 const Contact = () => import("../sections/Contact");
+const AboutMe = () => import("../sections/AboutMe");
 const Footer = () => import("../sections/Footer");
 const LatestUpdates = () => import("../sections/LatestUpdates");
 const Quotes = () => import("../sections/Quotes");
