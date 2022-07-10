@@ -17,21 +17,15 @@
               max-width="720"
             >
               My name is Tamer Khraisha and I am originally from the Middle
-              East. I have been living in Europe for the past 12 years, and
+              East. I have been living in Europe for the past 13 years, and
               currently, I am based in Luxembourg. I did my undergraduate
               studies in finance and economics, which constitute my primary
               domain of knowledge. After that, I earned a Ph.D. cum laude in
               Network Science from the Department of Network and Data Science at
               the Central European University in Budapest. Currently, I am
               employed as a Quantitative Developer NextGateTech, where we are
-              mainly developing
-              <a
-                style="text-decoration: none"
-                href="https://nuvolos.cloud/"
-                target="_blank"
-                >Nuvolos</a
-              >, the knowledge creation cloud, an integrated and unified cloud
-              platform designed for online education and research.
+              developing a cloud-based smart oversight platform for the asset
+              management industry.
             </v-responsive>
           </v-col>
         </v-row>
