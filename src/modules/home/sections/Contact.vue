@@ -17,12 +17,12 @@
       </v-responsive>
       <v-container fill-height>
         <v-row no-gutters justify="center" align="center">
-          <v-col lg="12" cols="11">
+          <v-col cols="9">
             <v-img
               id="budapest-image"
               class="mb-5"
               contain
-              src="../../../assets/luxembourg4.png"
+              src="@/assets/luxembourg4.png"
             >
             </v-img>
           </v-col>

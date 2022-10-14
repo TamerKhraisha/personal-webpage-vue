@@ -1,6 +1,6 @@
 <template>
   <section>
-    <v-img height="100vh" src="@/assets/pencil18.jpg">
+    <v-img height="100vh" src="@/assets/earth.jpg">
       <template v-slot:placeholder>
         <v-row class="fill-height ma-0" align="center" justify="center">
           <v-progress-circular
