@@ -27,31 +27,27 @@
             NextGateTech, where we are developing a cloud-based oversight
             platform for the asset management industry.
           </span>
-          <v-btn
-            href="http://www.tamerkhraisha.com/files/curriculum_latest.pdf"
-            target="_blank"
-            color="grey"
-            outlined
-            large
-            v-if="false"
-          >
-            <span class="grey--text text--darken-1 font-weight-bold">
-              Download My CV
-            </span>
-          </v-btn>
+          <div>
+            <v-btn
+              href="http://www.tamerkhraisha.com/files/curriculum_latest.pdf"
+              target="_blank"
+              color="grey"
+              outlined
+              small
+              class="mt-5"
+            >
+              <span class="grey--text text--darken-1 font-weight-bold">
+                Download My CV
+              </span>
+            </v-btn>
+          </div>
         </v-col>
-        <v-col md="6" cols="12">
+        <v-col md="7" sm="8" cols="12" lg="6">
           <div class="d-flex justify-center">
-            <v-img
-              max-width="500"
-              max-height="550"
-              src="@/assets/Amsterdam.jpeg"
-            ></v-img>
+            <v-img src="@/assets/Amsterdam.jpeg"></v-img>
           </div>
         </v-col>
       </v-row>
-
-      <div></div>
     </v-container>
     <v-avatar v-if="false" class="elevation-12 " size="128">
       <v-img src="@/assets/tamer3.jpg"></v-img>

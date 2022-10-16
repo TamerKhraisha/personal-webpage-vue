@@ -17,15 +17,16 @@
           >
             <span
               :class="[
-                $vuetify.breakpoint.mdAndDown ? 'display-1' : 'display-1',
-                'mb-3'
+                $vuetify.breakpoint.lgAndDown ? 'display-1' : 'display-2'
               ]"
+              style="font-family: Francois One !important"
             >
-              Tamer Khraisha
+              TAMER KHRAISHA
             </span>
             <span
-              :class="[$vuetify.breakpoint.mdAndDown ? 'title' : 'headline']"
-              style="font-family: Francois One !important"
+              :class="[
+                $vuetify.breakpoint.lgAndDown ? 'headline' : 'display-1'
+              ]"
               >Academic Achievements and Research</span
             >
             <v-btn

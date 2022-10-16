@@ -3,7 +3,11 @@
     <v-img height="100vh" src="@/assets/earth_2.jpg">
       <v-theme-provider dark>
         <v-container fill-height>
-          <canvas data-strokecolor="255,255,255" id="canvas"></canvas>
+          <canvas
+            style="background-color: 'red'"
+            data-strokecolor="255,255,255"
+            id="canvas"
+          ></canvas>
           <div
             style="width:100%"
             class="d-flex flex-column justify-center align-center white--text mt-10"
@@ -70,6 +74,7 @@ export default {
         canvas.height = height;
         ctx = canvas.getContext("2d");
 
+        console.log("canvas width is " + canvas.width)
         // create points
         points = [];
         for (var x = 0; x < width; x = x + width / 20) {
@@ -149,13 +154,10 @@ export default {
       }
 
       function resize() {
-        console.log("resizing")
         width = window.innerWidth;
         height = window.innerHeight;
         canvas.width = width;
         canvas.height = height;
-        console.log("width is: " + width + "canvas width is: " + canvas.width)
-
       }
 
       // animation
@@ -252,6 +254,6 @@ export default {
 #canvas {
   position: absolute;
   top: 0;
-  left: 0; 
+  left: 0;
 }
 </style>

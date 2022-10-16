@@ -6,7 +6,7 @@
       <h2
         class="display-1 mb-3 text-uppercase text-center primary--text francois-one"
       >
-        RECENT ACTIVITIES
+        Publications
       </h2>
       <v-responsive class="mx-auto mb-12" width="56">
         <v-divider class="mb-1"></v-divider>
