@@ -13,18 +13,12 @@
             class="d-flex flex-column justify-center align-center white--text mt-10"
           >
             <span
-              :class="[
-                $vuetify.breakpoint.lgAndDown ? 'display-1' : 'display-2'
-              ]"
+              class="display-1"
               style="font-family: Francois One !important"
             >
               TAMER KHRAISHA
             </span>
-            <span
-              :class="[
-                $vuetify.breakpoint.lgAndDown ? 'headline' : 'display-1'
-              ]"
-            >
+            <span class="headline">
               Software & Data Developer
             </span>
             <v-btn

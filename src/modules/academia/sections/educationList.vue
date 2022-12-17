@@ -14,7 +14,7 @@
         <v-divider></v-divider>
       </v-responsive>
       <v-row justify="center">
-        <v-col md="7" sm="8" cols="12" lg="6">
+        <v-col md="7" sm="8" cols="12" lg="6" xl="4">
           <div class="d-flex justify-center">
             <v-img src="@/assets/publications_img.jpg"></v-img>
           </div>
@@ -120,7 +120,7 @@
           <v-divider></v-divider>
         </v-responsive>
         <v-row justify="center">
-          <v-col md="7" sm="8" cols="12" lg="6">
+          <v-col md="7" sm="8" cols="12" lg="6" xl="4">
             <div class="d-flex justify-center">
               <v-img src="@/assets/university_degrees.jpg"></v-img>
             </div>
@@ -170,7 +170,7 @@
           <v-divider></v-divider>
         </v-responsive>
         <v-row justify="center">
-          <v-col md="7" sm="8" cols="12" lg="6">
+          <v-col md="7" sm="8" cols="12" lg="6" xl="4">
             <div class="d-flex justify-center">
               <v-img src="@/assets/visiting.jpg"></v-img>
             </div>
@@ -219,7 +219,7 @@
           <v-divider></v-divider>
         </v-responsive>
         <v-row justify="center">
-          <v-col md="7" sm="8" cols="12" lg="6">
+          <v-col md="7" sm="8" cols="12" lg="6" xl="4">
             <div class="d-flex justify-center">
               <v-img src="@/assets/conferences.jpg"></v-img>
             </div>

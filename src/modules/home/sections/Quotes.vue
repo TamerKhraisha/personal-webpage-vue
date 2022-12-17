@@ -1,6 +1,5 @@
 <template>
   <section
-    style=" background-image: -webkit-linear-gradient(to right, #004e92, #000428);background-image: linear-gradient(to right, #004e92, #000428);"
     id="stats"
   >
     <p
@@ -238,3 +237,11 @@ export default {
   }
 };
 </script>
+<style scoped>
+#stats {
+  background-image: -webkit-linear-gradient(to right, #004e92, #000428);  
+  background: url(../../../assets/overlay.png),linear-gradient(85deg, rgb(14, 58, 107), #262626);
+}
+
+
+</style>
