@@ -185,7 +185,7 @@
       <div class="web-developer">
         &copy; {{ new Date().getFullYear() }} — Handcrafted with
         <v-icon class="px-1" small color="white">mdi-heart</v-icon> by Tamer
-        Khraisha - it's hosted on Firestore
+        Khraisha using Vue and Vuetify - it's hosted on Firestore
       </div>
     </div>
   </v-sheet>
@@ -318,8 +318,5 @@ a {
 .hexagon-footer-overlay {
   fill: url(#overlay-footer-img);
 }
-
-
-
 
 </style>
