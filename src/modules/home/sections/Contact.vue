@@ -1,5 +1,5 @@
 <template>
-  <v-sheet id="contact" tag="section" tile class="mb-10">
+  <v-sheet id="contact" tag="section" tile >
     <v-row no-gutters justify="center" align="center">
       <v-col cols="12">
         <div class="d-flex align-center justify-center">

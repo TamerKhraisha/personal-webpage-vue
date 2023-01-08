@@ -4,19 +4,17 @@
       <TopSection />
       <AboutMe />
       <LatestUpdates />
+            <RecentProjects />
       <Quotes />
-      <RecentProjects />
       <InteractiveVisualizations />
       <Contact />
     </v-content>
-    <Footer />
   </div>
 </template>
 
 <script>
 const AboutMe = () => import("../sections/AboutMe");
 const Contact = () => import("../sections/Contact");
-const Footer = () => import("../sections/Footer");
 const LatestUpdates = () => import("../sections/LatestUpdates");
 const Quotes = () => import("../sections/Quotes");
 
@@ -30,7 +28,6 @@ export default {
   components: {
     AboutMe,
     Contact,
-    Footer,
     LatestUpdates,
     Quotes,
     TopSection,

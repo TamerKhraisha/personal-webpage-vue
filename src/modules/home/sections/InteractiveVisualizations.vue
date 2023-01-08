@@ -3,7 +3,7 @@
     <div class="py-12"></div>
     <v-container class="text-center">
       <h2 class="display-1 mb-3 primary--text text-uppercase">
-        interactive visualizations
+        <span class="main-title">interactive visualizations</span>
       </h2>
 
       <v-responsive class="mx-auto mb-12" width="56">
@@ -22,7 +22,7 @@
           <v-row>
             <v-col v-for="(item, i) in props.items" :key="i" cols="12" md="4">
               <v-hover v-slot:default="{ hover }">
-                <v-card class="mx-auto" color="grey lighten-4" max-width="600">
+                <v-card class="mx-auto" color="grey lighten-5" max-width="600">
                   <v-img :aspect-ratio="16 / 9" :src="item.src">
                     <v-expand-transition>
                       <div
@@ -39,7 +39,7 @@
                         ]"
                         style="height: 100%;"
                       >
-                        {{ item.text }}
+                        <span class="visualization-description">{{ item.text }}</span>
                       </div>
                     </v-expand-transition>
                   </v-img>
@@ -55,7 +55,7 @@
           </v-row>
         </template>
       </v-data-iterator>
-      <div class="mt-5">
+      <div class="mt-5" v-if="false">
         <v-btn
           small
           fab
@@ -91,7 +91,7 @@ export default {
   components: { VisualizationDialog },
   data() {
     return {
-      itemsPerPage: 3,
+      itemsPerPage: 6,
       page: 1,
       visualizations: [
         {
@@ -162,5 +162,11 @@ export default {
   opacity: 0.7;
   position: absolute;
   width: 100%;
+}
+.main-title {
+  font-family: "Rum Raisin", sans-serif;
+}
+.visualization-description {
+  font-family: "Rum Raisin", sans-serif;
 }
 </style>

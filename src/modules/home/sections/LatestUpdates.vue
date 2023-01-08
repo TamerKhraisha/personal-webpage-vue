@@ -39,6 +39,7 @@
                       href="https://css-tricks.com/use-and-reuse-everything-in-svg-even-animations/"
                       class="article-card-header read-article"
                       style="font-family: Francois One !important"
+                      target="_blank"
                     >
                       Use and Reuse Everything in SVG Even Animations!
                     </a>

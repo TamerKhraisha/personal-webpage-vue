@@ -13,12 +13,11 @@
             class="d-flex flex-column justify-center align-center white--text mt-10"
           >
             <span
-              class="display-1"
-              style="font-family: Francois One !important"
+              class="display-2"
             >
-              TAMER KHRAISHA
+              <span class="main-title">TAMER KHRAISHA</span>
             </span>
-            <span class="headline">
+            <span class="display-1">
               Software & Data Developer
             </span>
             <v-btn
@@ -249,5 +248,8 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
+}
+.main-title {
+  font-family: "Rum Raisin", sans-serif;
 }
 </style>

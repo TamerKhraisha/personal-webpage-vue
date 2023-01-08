@@ -1,5 +1,5 @@
 <template>
-  <section id="features">
+  <section id="features" class="grey lighten-5">
     <div class="py-12"></div>
     <v-container class="text-center">
       <h2 class="display-1 mb-3 primary--text text-uppercase">
