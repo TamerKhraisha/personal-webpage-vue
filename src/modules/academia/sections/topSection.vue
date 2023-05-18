@@ -1,6 +1,6 @@
 <template>
   <section>
-    <v-img height="100vh" src="@/assets/pencil18.jpg">
+    <v-img height="100vh" src="@/assets/library4.jpg">
       <template v-slot:placeholder>
         <v-row class="fill-height ma-0" align="center" justify="center">
           <v-progress-circular
@@ -17,15 +17,16 @@
           >
             <span
               :class="[
-                $vuetify.breakpoint.mdAndDown ? 'display-1' : 'display-1',
-                'mb-3'
+                $vuetify.breakpoint.lgAndDown ? 'display-1' : 'display-2'
               ]"
+              style="font-family: Francois One !important"
             >
-              Tamer Khraisha
+              TAMER KHRAISHA
             </span>
             <span
-              :class="[$vuetify.breakpoint.mdAndDown ? 'title' : 'headline']"
-              style="font-family: Francois One !important"
+              :class="[
+                $vuetify.breakpoint.lgAndDown ? 'headline' : 'display-1'
+              ]"
               >Academic Achievements and Research</span
             >
             <v-btn

@@ -1,6 +1,6 @@
 <template>
   <section>
-    <v-img height="100vh" src="@/assets/pencil4.jpg">
+    <v-img height="100vh" src="@/assets/wood3.jpg">
       <v-theme-provider dark>
         <v-container fill-height>
           <div

@@ -45,9 +45,7 @@
           <div class="h-divider">
             <div class="shadow"></div>
             <div class="text2">
-              <img
-                src="https://t1.gstatic.com/images?q=tbn:ANd9GcQsmMfybMIwoE5etmOIAuvnFWdfv_8C1Bq15urJFqwhhI55FyYNP2YuUA"
-              />
+              <img src="@/assets/divider.png" />
             </div>
           </div>
           <br />

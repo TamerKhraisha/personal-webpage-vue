@@ -47,11 +47,6 @@
               >Academia</span
             ></v-btn
           >
-          <v-btn :to="{ name: 'blog' }" class="subtitle-1" color="white" text
-            ><span style="font-family: Francois One !important"
-              >Blog</span
-            ></v-btn
-          >
         </div>
       </v-toolbar-items>
       <v-app-bar-nav-icon
@@ -88,6 +83,17 @@
     <transition name="fadeonly" mode="out-in">
       <router-view></router-view>
     </transition>
+    <div class="text-center ma-2">
+      <v-snackbar v-model="snackbar" :timeout="10000">
+        {{ text }}
+
+        <template v-slot:action="{ attrs }">
+          <v-btn color="pink" v-bind="attrs" @click="snackbar = false">
+            > Close
+          </v-btn>
+        </template>
+      </v-snackbar>
+    </div>
   </v-app>
 </template>
 
@@ -98,12 +104,13 @@ export default {
     return {
       drawer: false,
       group: null,
+      text: "Site underconstruction, may not scale properly on small screens",
+      snackbar: true,
       drawerListItems: [
         { name: "home", icon: "mdi-home" },
         { name: "experience", icon: "mdi-briefcase" },
         { name: "skills", icon: "mdi-code-tags" },
-        { name: "academia", icon: "mdi-school" },
-        { name: "blog", icon: "mdi-post" }
+        { name: "academia", icon: "mdi-school" }
       ]
     };
   }

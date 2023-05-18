@@ -4,12 +4,15 @@
       <v-hover v-slot:default="{ hover }">
         <span
           v-on="on"
-          :class="[
-            hover ? 'cyan--text' : 'black--text',
-            $vuetify.breakpoint.lgAndDown ? 'headline' : 'display-1'
-          ]"
+          :class="[$vuetify.breakpoint.lgAndDown ? 'display-2' : 'display-1']"
         >
-          {{ visualizationTitle }}
+          <span
+            :class="[
+              hover ? ['cyan--text', 'mouse-hover'] : 'grey--text',
+              'visualization-title',
+            ]"
+            >{{ visualizationTitle }}</span
+          >
         </span>
       </v-hover>
     </template>
@@ -21,7 +24,7 @@
         <v-toolbar-title>{{ visualizationTitle }}</v-toolbar-title>
       </v-toolbar>
       <iframe
-        style="position: absolute; height: 100%; width:100%; border: none"
+        style="position: absolute; height: 100%; width: 100%; border: none"
         :src="visualizationLink"
       ></iframe>
     </v-card>
@@ -32,12 +35,20 @@
 export default {
   props: {
     visualizationTitle: String,
-    visualizationLink: String
+    visualizationLink: String,
   },
   data() {
     return {
-      dialog: false
+      dialog: false,
     };
-  }
+  },
 };
 </script>
+<style scoped>
+.visualization-title {
+  font-family: "Petemoss", cursive;
+}
+.mouse-hover {
+  cursor: pointer;
+}
+</style>

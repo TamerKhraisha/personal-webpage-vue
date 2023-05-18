@@ -1,197 +1,255 @@
 <template>
   <section id="academia">
+    <div class="py-12"></div>
+
     <v-container>
-      <v-card flat>
-        <v-card-text>
-          <div class="d-flex flex-column align-start">
-            <div>
-              <div class="d-flex flex-column mb-10">
-                <div class="d-flex flex-column">
-                  <span
-                    style="padding-top:100px"
-                    class="title text-uppercase black--text mb-3"
-                    >Publications</span
-                  >
-                  <span class="mb-3 subtitle-1">
-                    My research interests are focused on two areas:
-                    <span class="font-weight-bold"
-                      >(1) technological innovation</span
-                    >, where the aim is to understand how and why innovations
-                    are initially developed, how and why do they diffuse and
-                    gain popularity while others do not, and how to understand
-                    their evolutionary dynamics;<span class="font-weight-bold"
-                      >(2) Financial data science</span
-                    >, where the goal is to understand how novelties from
-                    machine learning and alternative datasets can help to
-                    improve financial modeling and practices.
-                  </span>
-                </div>
-              </div>
-              <div
-                v-for="(item, index) in publications"
-                :key="item.title"
-                class="mb-3"
+      <h2
+        class="display-1 mb-1 text-uppercase text-center primary--text francois-one"
+      >
+        publications
+      </h2>
+      <v-responsive class="mx-auto mb-12" width="56">
+        <v-divider class="mb-1"></v-divider>
+
+        <v-divider></v-divider>
+      </v-responsive>
+      <v-row justify="center">
+        <v-col md="7" sm="8" cols="12" lg="6" xl="4">
+          <div class="d-flex justify-center">
+            <v-img src="@/assets/publications_img.jpg"></v-img>
+          </div>
+        </v-col>
+        <v-col v-if="false" cols="10">
+          <span class="mb-3 text-center">
+            My research interests are focused on two areas:
+            <span class="font-weight-bold">technological innovation</span>,
+            where the aim is to understand how and why innovations are initially
+            developed, how and why do they diffuse and gain popularity while
+            others do not, and how to understand their evolutionary
+            dynamics;<span class="font-weight-bold">
+              financial data science</span
+            >, where the goal is to understand how novelties from machine
+            learning and alternative datasets can help to improve financial
+            modeling and practices.
+          </span>
+        </v-col>
+      </v-row>
+      <div class="d-flex flex-column align-start mt-5">
+        <div
+          v-for="(item, index) in publications"
+          :key="item.title"
+          class="mb-3"
+        >
+          <div class="d-flex align-start">
+            <span s class="font-weight-bold subtitle-1 mr-8">{{
+              item.year
+            }}</span>
+            <div class="d-flex flex-column">
+              <span
+                class="title"
+                style="font-family: Francois One !important"
+                >{{ item.title }}</span
               >
-                <div class="d-flex align-start">
-                  <span s class="font-weight-bold subtitle-1 mr-8">{{
-                    item.year
-                  }}</span>
-                  <div class="d-flex flex-column">
-                    <span
-                      class="title"
-                      style="font-family: Francois One !important"
-                      >{{ item.title }}</span
-                    >
-                    <span
-                      style="font-family: Francois One !important"
-                      class="subtitle-1"
-                      >{{ item.authors }}</span
-                    >
-                    <span style="font-family: Francois One !important">{{
-                      item.journal
-                    }}</span>
-                    <div class="my-3 subtitle-1">
-                      <span v-if="item.allAbstract === true">{{
-                        item.abstract
-                      }}</span>
-                      <span v-else>{{ item.abstract.substring(0, 350) }}</span>
-                      <a
-                        v-if="item.allAbstract === false"
-                        @click="publications[index].allAbstract = true"
-                        class="cyan--text"
-                        >...show all</a
-                      >
-                      <a
-                        v-else-if="item.allAbstract === true"
-                        @click="publications[index].allAbstract = false"
-                        class="cyan--text"
-                      >
-                        show less</a
-                      >
-                    </div>
-
-                    <div>
-                      <v-btn
-                        class="px-0"
-                        :href="item.link"
-                        target="_blank"
-                        text
-                        color="error"
-                      >
-                        <div class="d-flex align-center">
-                          <v-icon class="mr-1" small>mdi-file</v-icon
-                          ><span class="caption"
-                            >Download paper from the publisher</span
-                          >
-                        </div>
-                      </v-btn>
-                    </div>
-                    <v-divider
-                      v-if="index + 1 !== publications.length"
-                      class="my-3"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div style="width:100%">
-              <div class="d-flex flex-column mb-10">
-                <span
-                  style="padding-top:100px"
-                  class="title text-uppercase black--text mb-3"
-                  >university degrees</span
-                >
-              </div>
-              <div
-                v-for="(item, index) in universityDegrees"
-                :key="item.title"
-                class="mb-3"
+              <span
+                style="font-family: Francois One !important"
+                class="subtitle-1"
+                >{{ item.authors }}</span
               >
-                <div class="d-flex align-start">
-                  <span s class="font-weight-bold subtitle-1 mr-8">{{
-                    item.year
-                  }}</span>
-                  <div class="d-flex flex-column">
-                    <span
-                      style="font-family: Francois One !important"
-                      class="title"
-                      >{{ item.title }}</span
-                    >
-                    <span class="subtitle-1">{{ item.university }}</span>
-                    <span>{{ item.department }}</span>
-                    <span> {{ item.date }}</span>
-                  </div>
-                </div>
-                <v-divider
-                  v-if="index + 1 !== universityDegrees.length"
-                  class="my-5"
-                />
-              </div>
-            </div>
-
-            <div style="width:100%">
-              <div class="d-flex flex-column mb-10">
-                <span
-                  style="padding-top:100px"
-                  class="title text-uppercase black--text mb-3"
-                  >visiting fellowships</span
+              <span style="font-family: Francois One !important">{{
+                item.journal
+              }}</span>
+              <div class="my-3 subtitle-1">
+                <span v-if="item.allAbstract === true">{{
+                  item.abstract
+                }}</span>
+                <span v-else>{{ item.abstract.substring(0, 350) }}</span>
+                <a
+                  v-if="item.allAbstract === false"
+                  @click="publications[index].allAbstract = true"
+                  class="cyan--text"
+                  >...show all</a
+                >
+                <a
+                  v-else-if="item.allAbstract === true"
+                  @click="publications[index].allAbstract = false"
+                  class="cyan--text"
+                >
+                  show less</a
                 >
               </div>
-              <div v-for="(item, index) in visitingFellowShips" :key="index">
-                <div class="d-flex align-start">
-                  <span s class="font-weight-bold subtitle-1 mr-8">{{
-                    item.year
-                  }}</span>
-                  <div class="d-flex flex-column">
-                    <span
-                      style="font-family: Francois One !important"
-                      class="title"
-                      >{{ item.place }}</span
-                    >
-                    <span class="subtitle-1">{{ item.title }}</span>
-                    <span> {{ item.date }}</span>
-                  </div>
-                </div>
-                <v-divider
-                  v-if="index + 1 !== universityDegrees.length"
-                  class="my-5"
-                />
-              </div>
-            </div>
 
-            <div style="width:100%">
-              <div class="d-flex flex-column mb-10">
-                <span
-                  style="padding-top:100px"
-                  class="title text-uppercase black--text mb-3"
-                  >conferences & schools</span
+              <div>
+                <v-btn
+                  class="px-0"
+                  :href="item.link"
+                  target="_blank"
+                  text
+                  color="error"
                 >
-              </div>
-              <div v-for="(item, index) in conferencesAndSchools" :key="index">
-                <div class="d-flex align-start">
-                  <span s class="font-weight-bold subtitle-1 mr-8">{{
-                    item.year
-                  }}</span>
-                  <div class="d-flex flex-column">
-                    <span
-                      style="font-family: Francois One !important"
-                      class="title"
-                      >{{ item.event }}</span
+                  <div class="d-flex align-center">
+                    <v-icon class="mr-1" small>mdi-file</v-icon
+                    ><span class="caption"
+                      >Download paper from the publisher</span
                     >
-                    <span class="subtitle-1">{{ item.place }}</span>
-                    <span> {{ item.date }}</span>
                   </div>
-                </div>
-                <v-divider
-                  v-if="index + 1 !== conferencesAndSchools.length"
-                  class="my-5"
-                />
+                </v-btn>
               </div>
+              <v-divider
+                v-if="index + 1 !== publications.length"
+                class="my-3"
+              />
             </div>
           </div>
-        </v-card-text>
-      </v-card>
+        </div>
+      </div>
+      <div class="h-divider">
+        <div class="shadow"></div>
+        <div class="text2">
+          <img src="@/assets/divider.png" />
+        </div>
+      </div>
+      <div style="width:100%">
+        <h2
+          class="display-1 mb-3 text-uppercase text-center primary--text francois-one"
+        >
+          univerity degrees
+        </h2>
+        <v-responsive class="mx-auto mb-12" width="56">
+          <v-divider class="mb-1"></v-divider>
+
+          <v-divider></v-divider>
+        </v-responsive>
+        <v-row justify="center">
+          <v-col md="7" sm="8" cols="12" lg="6" xl="4">
+            <div class="d-flex justify-center">
+              <v-img src="@/assets/university_degrees.jpg"></v-img>
+            </div>
+          </v-col>
+        </v-row>
+        <div
+          v-for="(item, index) in universityDegrees"
+          :key="item.title"
+          class="mb-3 mt-5"
+        >
+          <div class="d-flex align-start">
+            <span s class="font-weight-bold subtitle-1 mr-8">{{
+              item.year
+            }}</span>
+            <div class="d-flex flex-column">
+              <span
+                style="font-family: Francois One !important"
+                class="title"
+                >{{ item.title }}</span
+              >
+              <span class="subtitle-1">{{ item.university }}</span>
+              <span>{{ item.department }}</span>
+              <span> {{ item.date }}</span>
+            </div>
+          </div>
+          <v-divider
+            v-if="index + 1 !== universityDegrees.length"
+            class="my-5"
+          />
+        </div>
+      </div>
+      <div class="h-divider">
+        <div class="shadow"></div>
+        <div class="text2">
+          <img src="@/assets/divider.png" />
+        </div>
+      </div>
+      <div style="width:100%">
+        <h2
+          class="display-1 mb-3 text-uppercase text-center primary--text francois-one"
+        >
+          visiting fellowships
+        </h2>
+        <v-responsive class="mx-auto mb-12" width="56">
+          <v-divider class="mb-1"></v-divider>
+
+          <v-divider></v-divider>
+        </v-responsive>
+        <v-row justify="center">
+          <v-col md="7" sm="8" cols="12" lg="6" xl="4">
+            <div class="d-flex justify-center">
+              <v-img src="@/assets/visiting.jpg"></v-img>
+            </div>
+          </v-col>
+        </v-row>
+        <div
+          class="mb-3 mt-5"
+          v-for="(item, index) in visitingFellowShips"
+          :key="index"
+        >
+          <div class="d-flex align-start">
+            <span s class="font-weight-bold subtitle-1 mr-8">{{
+              item.year
+            }}</span>
+            <div class="d-flex flex-column">
+              <span
+                style="font-family: Francois One !important"
+                class="title"
+                >{{ item.place }}</span
+              >
+              <span class="subtitle-1">{{ item.title }}</span>
+              <span> {{ item.date }}</span>
+            </div>
+          </div>
+          <v-divider
+            v-if="index + 1 !== universityDegrees.length"
+            class="my-5"
+          />
+        </div>
+      </div>
+      <div class="h-divider">
+        <div class="shadow"></div>
+        <div class="text2">
+          <img src="@/assets/divider.png" />
+        </div>
+      </div>
+      <div style="width:100%">
+        <h2
+          class="display-1 mb-3 text-uppercase text-center primary--text francois-one"
+        >
+          Conferences and schools
+        </h2>
+        <v-responsive class="mx-auto mb-12" width="56">
+          <v-divider class="mb-1"></v-divider>
+
+          <v-divider></v-divider>
+        </v-responsive>
+        <v-row justify="center">
+          <v-col md="7" sm="8" cols="12" lg="6" xl="4">
+            <div class="d-flex justify-center">
+              <v-img src="@/assets/conferences.jpg"></v-img>
+            </div>
+          </v-col>
+        </v-row>
+        <div
+          class="mt-5"
+          v-for="(item, index) in conferencesAndSchools"
+          :key="index"
+        >
+          <div class="d-flex align-start">
+            <span s class="font-weight-bold subtitle-1 mr-8">{{
+              item.year
+            }}</span>
+            <div class="d-flex flex-column">
+              <span
+                style="font-family: Francois One !important"
+                class="title"
+                >{{ item.event }}</span
+              >
+              <span class="subtitle-1">{{ item.place }}</span>
+              <span> {{ item.date }}</span>
+            </div>
+          </div>
+          <v-divider
+            v-if="index + 1 !== conferencesAndSchools.length"
+            class="my-5"
+          />
+        </div>
+      </div>
     </v-container>
   </section>
 </template>
@@ -200,6 +258,19 @@ export default {
   data() {
     return {
       publications: [
+        {
+          title:
+            "FinTech Firms and the Exploration and Exploitation of Financial Landscapes",
+          authors: "Khraisha, T",
+          abstract:
+            "A problem is said to be complex if it comprises many parts or dimensions with various interactions. In such a case, it is reasonable to assume that the problem admits a multidimensional solution space, which comprises all candidate solutions. Different solutions can have different goodness score, which can be called fitness. Innovators and problem solvers interested in solving a complex problem are assumed to be located somewhere in the solution landscape. Ideally, a searching agent would be interested in finding the solution with the highest fitness possible, and in doing so, employing a search heuristic. Financial problems such as investment, payment, risk management, and fraud detection are all examples of complex problems that have complex landscapes of solutions. In searching for solutions to financial problems, firms often engage in financial innovation. A particular type of financial innovation is developed by FinTech start-ups, which introduce innovations in the backend and customer-face financial services. FinTech firms are thought to follow a unique approach to change characterized by agility and unconstrained search for new solutions. So far, little has been done to understand the nature of the search behavior of FinTech firms; this, therefore, is still an open gap in the literature that requires further investigation. In this theoretical chapter, I first propose to use the theory of fitness landscapes to model the solution space of financial problems, and second, I adopt an open innovation perspective to model the search heuristics of FinTech firms who look for solutions in such landscapes.",
+          allAbstract: false,
+          journal:
+            "Transformation Dynamics in FinTech: An Open Innovation Ecosystem Outlook (pp. 337-354).",
+          year: 2022,
+          link:
+            "https://www.worldscientific.com/doi/abs/10.1142/9789811239731_0012"
+        },
         {
           title:
             "A Holistic Approach to Financial Data Science: Data, Technology, and Analytics",
@@ -324,3 +395,76 @@ export default {
   }
 };
 </script>
+<style scoped>
+.h-divider {
+  margin: auto;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  width: 80%;
+  position: relative;
+}
+
+.h-divider .shadow {
+  overflow: hidden;
+  height: 20px;
+}
+
+.h-divider .shadow:after {
+  content: "";
+  display: block;
+  margin: -25px auto 0;
+  width: 100%;
+  height: 25px;
+  border-radius: 125px/12px;
+  box-shadow: 0 0 8px black;
+}
+
+.h-divider .text {
+  width: 100px;
+  height: 45px;
+  padding: 10px;
+  position: absolute;
+  bottom: 100%;
+  margin-bottom: -33px;
+  left: 50%;
+  margin-left: -60px;
+  border-radius: 100%;
+  box-shadow: 0 2px 4px #999;
+  background: white;
+}
+
+.h-divider .text i {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+  border-radius: 100%;
+  border: 1px dashed #aaa;
+  text-align: center;
+  line-height: 50px;
+  font-style: normal;
+  color: #999;
+}
+
+.h-divider .text2 {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  bottom: 100%;
+  margin-bottom: -35px;
+  left: 50%;
+  margin-left: -25px;
+  border-radius: 100%;
+  box-shadow: 0 2px 4px #999;
+  background: white;
+}
+
+.h-divider img {
+  position: absolute;
+  margin: 4px;
+  max-width: 60px;
+  border-radius: 100%;
+  border: 1px dashed #aaa;
+}
+</style>
