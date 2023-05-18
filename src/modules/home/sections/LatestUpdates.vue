@@ -1,22 +1,30 @@
 <template>
   <section class="white lighten-5" id="features">
-
     <div class="popular-articles d-flex flex-column">
       <v-row no-gutters align="center" justify="center">
-        <v-col cols="2">
-          <div
-            style="font-family: Francois One !important"
-            class="intro-border-wrap"
-          >
+        <v-col v-if="$vuetify.breakpoint.mdAndUp" cols="2" md="2" sm="12">
+          <div class="intro-border-wrap">
             <div class="intro">
               <p id="title" class="mb-5">Latest Activities</p>
               <p id="sub-title">
-                I write about many things like software engineering, database desing, and machine learning.
+                I write about many things like software engineering, database
+                desing, and machine learning.
               </p>
             </div>
           </div>
         </v-col>
-        <v-col cols="10">
+        <v-col v-if="$vuetify.breakpoint.smAndDown" cols="12">
+          <h2 class="display-1 text-center mb-3 primary--text text-uppercase">
+            <span class="bold-font">Latest Activities</span>
+          </h2>
+
+          <v-responsive class="mx-auto" width="56">
+            <v-divider class="mb-1"></v-divider>
+
+            <v-divider></v-divider>
+          </v-responsive>
+        </v-col>
+        <v-col cols="10" sm="12" md="10">
           <div class="mini-card-grid">
             <article
               class="mini-card module module-article article"
@@ -99,24 +107,27 @@ export default {
           title: "Swiss Research Data Day 2020",
           category: "conference",
           link: "https://www.dlcm.ch/swiss-research-data-day-2020/call",
-          text: "The 2020 edition of the Swiss Research Data day will focus on all aspects of Research Data Management(RDM).The event brings together an interdisciplinary community of researchers, librarians, funders, publishers and policy-makers, providing a critical look at the new developments in RDM practices, standards and technologies.\nIn this conference, I will by presenting Nuvolos, the knowledge creation cloud, an integrated and unified cloud framework designed and built for the needs of academics.",
+          text:
+            "The 2020 edition of the Swiss Research Data day will focus on all aspects of Research Data Management(RDM).The event brings together an interdisciplinary community of researchers, librarians, funders, publishers and policy-makers, providing a critical look at the new developments in RDM practices, standards and technologies.\nIn this conference, I will by presenting Nuvolos, the knowledge creation cloud, an integrated and unified cloud framework designed and built for the needs of academics."
         },
         {
           src: require("@/assets/network-science.jpg"),
           category: "blog article",
           title:
             "Industry Applications of Network Science and Graph Algorithms",
-          text: "Network science has emerged as an interdisciplinary field of research to leverage network data's increasing availability to investigate a wide range of complex phenomena such as collective social behavior, technological development, financial stability, biological interactions, and many more. Simply put, network data consists of entities known as nodes, and relations between them are known as links. Nodes can be persons, organizations, URLs, or proteins. Links can represent relations such as the friendship between persons, technological transfers between firms, hyperlinks between websites, and chemical interactions between proteins. Network science employs an extensive array of analytical methods and data science techniques borrowed from sociology, mathematics, physics, computer science, economics, and other fields.\nMost current research in network science has focused on measurements and the construction of theoretical and data-driven models. Although less has been done on the industry side, there are several cases and areas in which network science has either been successfully employed or could potentially be applied. In this article, I will illustrate some of these applications and provide examples and references for further investigations.",
+          text:
+            "Network science has emerged as an interdisciplinary field of research to leverage network data's increasing availability to investigate a wide range of complex phenomena such as collective social behavior, technological development, financial stability, biological interactions, and many more. Simply put, network data consists of entities known as nodes, and relations between them are known as links. Nodes can be persons, organizations, URLs, or proteins. Links can represent relations such as the friendship between persons, technological transfers between firms, hyperlinks between websites, and chemical interactions between proteins. Network science employs an extensive array of analytical methods and data science techniques borrowed from sociology, mathematics, physics, computer science, economics, and other fields.\nMost current research in network science has focused on measurements and the construction of theoretical and data-driven models. Although less has been done on the industry side, there are several cases and areas in which network science has either been successfully employed or could potentially be applied. In this article, I will illustrate some of these applications and provide examples and references for further investigations."
         },
         {
           src: require("@/assets/finance.jpg"),
           category: "scientific publication",
           title: "A Holistic Approach to Financial Data Science",
-          text: "The scientific analysis of financial data, both for practical and theoretical purposes, has continuously been an active and evolving area. Traditionally, financial modeling and analysis have primarily relied on financial econometrics, which applies statistical methods to the problems of finance. Recently, advances in analytical and algorithmic methods, powerful technological solutions, and the expansion of the financial data ecosystem have created new opportunities and provided novel and robust ways to solve existing and new problems in finance. To expand the scope of financial econometrics and incorporate these novelties, the field of financial data science (FDS) has emerged. Crucially, FDS adds more interdisciplinary, methodological variety and technological components to the analysis process, thus generating the need for a holistic view in the management of an FDS project. In this article, the author presents a holistic and structured approach to efficiently and effectively manage an FDS project. The main contribution of the article is to provide a comprehensive, financial domain–oriented approach to FDS management that can be used by researchers and practitioners to exploit the opportunities arising from the evolving finance landscape.",
-        },
-      ],
+          text:
+            "The scientific analysis of financial data, both for practical and theoretical purposes, has continuously been an active and evolving area. Traditionally, financial modeling and analysis have primarily relied on financial econometrics, which applies statistical methods to the problems of finance. Recently, advances in analytical and algorithmic methods, powerful technological solutions, and the expansion of the financial data ecosystem have created new opportunities and provided novel and robust ways to solve existing and new problems in finance. To expand the scope of financial econometrics and incorporate these novelties, the field of financial data science (FDS) has emerged. Crucially, FDS adds more interdisciplinary, methodological variety and technological components to the analysis process, thus generating the need for a holistic view in the management of an FDS project. In this article, the author presents a holistic and structured approach to efficiently and effectively manage an FDS project. The main contribution of the article is to provide a comprehensive, financial domain–oriented approach to FDS management that can be used by researchers and practitioners to exploit the opportunities arising from the evolving finance landscape."
+        }
+      ]
     };
-  },
+  }
 };
 </script>
 
@@ -430,15 +441,7 @@ time {
     box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25),
       inset -2px -2px 2px rgba(0, 0, 0, 0.25);
   }
-  .popular-articles::-webkit-scrollbar-track {
-    background: linear-gradient(
-      90deg,
-      #201c29,
-      #201c29 1px,
-      #17141d 0,
-      #17141d
-    );
-  }
+
   .popular-articles .mini-card {
     scroll-snap-align: start;
   }
@@ -489,7 +492,8 @@ time {
   padding: 1.5rem;
   border-radius: 16px;
   background-image: -webkit-linear-gradient(to right, #fad02c, #000428);
-  background: url(../../../assets/overlay.png),linear-gradient(85deg, rgb(14, 58, 107), #262626);
+  background: url(../../../assets/overlay.png),
+    linear-gradient(85deg, rgb(14, 58, 107), #262626);
   box-shadow: -2rem 0 3rem -2rem #000;
   display: -webkit-box;
   display: flex;
@@ -639,11 +643,15 @@ time {
   color: white;
   padding: 2rem;
   height: 400px;
+  font-family: "Rum Raisin", sans-serif;
 }
 .intro #title {
   font-size: 35px;
 }
 .intro #sub-title {
   font-size: 100%;
+}
+.bold-font {
+  font-family: "Rum Raisin", sans-serif;
 }
 </style>
