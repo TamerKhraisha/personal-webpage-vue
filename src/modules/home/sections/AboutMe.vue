@@ -47,7 +47,7 @@
                     <v-col cols="6" md="6" sm="12">
                       <div class="d-flex justify-center">
                         <v-btn
-                          href="http://www.tamerkhraisha.com/files/curriculum_latest.pdf"
+                          href="https://www.linkedin.com/in/tamer-khraisha/"
                           target="_blank"
                           color="white"
                           outlined
@@ -78,7 +78,7 @@
                     >
                       <div class="d-flex justify-center">
                         <v-btn
-                          href="http://www.tamerkhraisha.com/files/curriculum_latest.pdf"
+                          href="https://www.linkedin.com/in/tamer-khraisha/"
                           target="_blank"
                           color="white"
                           outlined

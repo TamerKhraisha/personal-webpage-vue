@@ -47,11 +47,6 @@
               >Academia</span
             ></v-btn
           >
-          <v-btn :to="{ name: 'blog' }" class="subtitle-1" color="white" text
-            ><span style="font-family: Francois One !important"
-              >Blog</span
-            ></v-btn
-          >
         </div>
       </v-toolbar-items>
       <v-app-bar-nav-icon

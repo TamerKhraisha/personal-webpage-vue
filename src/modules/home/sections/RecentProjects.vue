@@ -3,7 +3,7 @@
     <div class="py-12"></div>
     <v-container class="text-center">
       <h2 class="display-1 mb-3 primary--text text-uppercase">
-        recent projects
+        <span class="main-title">recent projects</span>
       </h2>
 
       <v-responsive class="mx-auto mb-12" width="56">
@@ -93,5 +93,8 @@ export default {
   opacity: 0.5;
   position: absolute;
   width: 100%;
+}
+.main-title {
+  font-family: "Rum Raisin", sans-serif;
 }
 </style>

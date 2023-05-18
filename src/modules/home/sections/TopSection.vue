@@ -12,17 +12,16 @@
             style="width:100%"
             class="d-flex flex-column justify-center align-center white--text mt-10"
           >
-            <span
-              class="display-2"
-            >
+            <span class="display-1">
               <span class="main-title">TAMER KHRAISHA</span>
             </span>
-            <span class="display-1">
+            <span class="headline">
               Software & Data Developer
             </span>
             <v-btn
               class="mt-5"
               fab
+              small
               outlined
               @click="$vuetify.goTo('#about-me')"
             >
