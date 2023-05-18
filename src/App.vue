@@ -83,17 +83,6 @@
     <transition name="fadeonly" mode="out-in">
       <router-view></router-view>
     </transition>
-    <div class="text-center ma-2">
-      <v-snackbar v-model="snackbar" :timeout="10000">
-        {{ text }}
-
-        <template v-slot:action="{ attrs }">
-          <v-btn color="pink" v-bind="attrs" @click="snackbar = false">
-            > Close
-          </v-btn>
-        </template>
-      </v-snackbar>
-    </div>
   </v-app>
 </template>
 

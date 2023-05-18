@@ -44,7 +44,7 @@
                   </div>
                   <h2>
                     <a
-                      href="https://css-tricks.com/use-and-reuse-everything-in-svg-even-animations/"
+                      :href="n.link"
                       class="article-card-header read-article bold-font"
                       target="_blank"
                     >
