@@ -39,7 +39,9 @@
                         ]"
                         style="height: 100%;"
                       >
-                        <span class="visualization-description">{{ item.text }}</span>
+                        <span class="visualization-description">{{
+                          item.text
+                        }}</span>
                       </div>
                     </v-expand-transition>
                   </v-img>
@@ -55,7 +57,7 @@
           </v-row>
         </template>
       </v-data-iterator>
-      <div class="mt-5" v-if="false">
+      <div class="mt-5">
         <v-btn
           small
           fab
@@ -91,7 +93,7 @@ export default {
   components: { VisualizationDialog },
   data() {
     return {
-      itemsPerPage: 6,
+      itemsPerPage: 3,
       page: 1,
       visualizations: [
         {
