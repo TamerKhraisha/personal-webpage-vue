@@ -4,7 +4,7 @@
       <TopSection />
       <AboutMe />
       <LatestUpdates />
-            <RecentProjects />
+      <RecentProjects />
       <Quotes />
       <InteractiveVisualizations />
       <Contact />
@@ -18,6 +18,7 @@ const LatestUpdates = () => import("../sections/LatestUpdates");
 const Quotes = () => import("../sections/Quotes");
 
 const TopSection = () => import("../sections/TopSection");
+const AboutMe = () => import("../sections/AboutMe.vue");
 const RecentProjects = () => import("../sections/RecentProjects");
 const InteractiveVisualizations = () =>
   import("../sections/InteractiveVisualizations");
