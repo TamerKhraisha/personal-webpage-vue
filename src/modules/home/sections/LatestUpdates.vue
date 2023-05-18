@@ -29,8 +29,8 @@
             <article
               class="mini-card module module-article article"
               id="mini-post-302186"
-              v-for="n in 10"
-              :key="n"
+              v-for="n in content"
+              :key="n.title"
             >
               <header class="mini-article-card-header">
                 <div class="mini-article-card-title">
@@ -38,25 +38,24 @@
                     <span
                       style="font-family: Francois One !important"
                       class="subtitle-2 warning--text"
-                      >Article</span
+                      >{{ n.category }}</span
                     >
-                    <time datetime="2020-01-28"> Jan 28, 2020 </time>
+                    <span class="white--text"> {{ n.date }}</span>
                   </div>
-                  <h2 class="">
+                  <h2>
                     <a
                       href="https://css-tricks.com/use-and-reuse-everything-in-svg-even-animations/"
-                      class="article-card-header read-article"
-                      style="font-family: Francois One !important"
+                      class="article-card-header read-article bold-font"
                       target="_blank"
                     >
-                      Use and Reuse Everything in SVG Even Animations!
+                      {{ n.title }}
                     </a>
                   </h2>
                   <p
-                    class="mt-5"
+                    class="mt-3"
                     style="font-family: Francois One !important; color: grey"
                   >
-                    This is a short suummary of the article
+                    {{ n.summary }}
                   </p>
                 </div>
               </header>
@@ -67,12 +66,7 @@
                   </v-avatar>
                   <div class="author-name-area">
                     <div class="author-name-prefix">Author</div>
-                    <a
-                      class="author-name"
-                      href="https://css-tricks.com/author/marianabeldi/"
-                    >
-                      Tamer Khraisha
-                    </a>
+                    <span class="white--text">Tamer Khraisha</span>
                   </div>
                 </div>
                 <div
@@ -85,9 +79,9 @@
                     secondary--text
                   "
                 >
-                  <v-chip class="mt-3" color="white" x-small outlined
-                    >switzerland</v-chip
-                  >
+                  <v-chip class="mt-3" color="white" x-small outlined>{{
+                    n.tag
+                  }}</v-chip>
                 </div>
               </div>
             </article>
@@ -101,29 +95,120 @@
 export default {
   data() {
     return {
-      articles: [
+      content: [
         {
-          src: require("@/assets/swiss_day.jpg"),
-          title: "Swiss Research Data Day 2020",
-          category: "conference",
-          link: "https://www.dlcm.ch/swiss-research-data-day-2020/call",
-          text:
-            "The 2020 edition of the Swiss Research Data day will focus on all aspects of Research Data Management(RDM).The event brings together an interdisciplinary community of researchers, librarians, funders, publishers and policy-makers, providing a critical look at the new developments in RDM practices, standards and technologies.\nIn this conference, I will by presenting Nuvolos, the knowledge creation cloud, an integrated and unified cloud framework designed and built for the needs of academics."
+          title: "Commoditization of Artificial Intelligence: AI-as-a-Service",
+          category: "Blog",
+          link:
+            "https://www.linkedin.com/pulse/commoditization-artificial-intelligence-tamer-khraisha-ph-d-?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3B9bt1cswnS5CjFRVmtpG0Rw%3D%3D",
+          date: "May 9, 2023",
+          summary: "Personal prediction of the future of AI in business",
+          tag: "Artificial Intelligence"
         },
         {
-          src: require("@/assets/network-science.jpg"),
-          category: "blog article",
+          title: "Top Artificial Intelligence and Machine Learning Journals",
+          category: "Blog",
+          link:
+            "https://www.linkedin.com/pulse/top-artificial-intelligence-machine-learning-journals-tamer/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_post_details%3BZYY%2B8yTXQjSu1JTso%2FH1bg%3D%3D",
+          date: "April 3, 2023",
+          summary: "A list of the best scientific journals in AI and ML",
+          tag: "Artificial Intelligence"
+        },
+        {
           title:
-            "Industry Applications of Network Science and Graph Algorithms",
-          text:
-            "Network science has emerged as an interdisciplinary field of research to leverage network data's increasing availability to investigate a wide range of complex phenomena such as collective social behavior, technological development, financial stability, biological interactions, and many more. Simply put, network data consists of entities known as nodes, and relations between them are known as links. Nodes can be persons, organizations, URLs, or proteins. Links can represent relations such as the friendship between persons, technological transfers between firms, hyperlinks between websites, and chemical interactions between proteins. Network science employs an extensive array of analytical methods and data science techniques borrowed from sociology, mathematics, physics, computer science, economics, and other fields.\nMost current research in network science has focused on measurements and the construction of theoretical and data-driven models. Although less has been done on the industry side, there are several cases and areas in which network science has either been successfully employed or could potentially be applied. In this article, I will illustrate some of these applications and provide examples and references for further investigations."
+            "Redshift vs BigQuery vs Snowflake: Analysis of cloud data warehouses",
+          category: "Blog",
+          link:
+            "https://www.linkedin.com/pulse/redshift-vs-bigquery-snowflake-internals-features-tamer-khraisha-phd/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_post_details%3BZYY%2B8yTXQjSu1JTso%2FH1bg%3D%3D",
+          date: "March 11, 2023",
+          summary:
+            "An analysis of the main features and difference of cloud warehouses",
+          tag: "Data Warehousing"
         },
         {
-          src: require("@/assets/finance.jpg"),
-          category: "scientific publication",
-          title: "A Holistic Approach to Financial Data Science",
-          text:
-            "The scientific analysis of financial data, both for practical and theoretical purposes, has continuously been an active and evolving area. Traditionally, financial modeling and analysis have primarily relied on financial econometrics, which applies statistical methods to the problems of finance. Recently, advances in analytical and algorithmic methods, powerful technological solutions, and the expansion of the financial data ecosystem have created new opportunities and provided novel and robust ways to solve existing and new problems in finance. To expand the scope of financial econometrics and incorporate these novelties, the field of financial data science (FDS) has emerged. Crucially, FDS adds more interdisciplinary, methodological variety and technological components to the analysis process, thus generating the need for a holistic view in the management of an FDS project. In this article, the author presents a holistic and structured approach to efficiently and effectively manage an FDS project. The main contribution of the article is to provide a comprehensive, financial domain–oriented approach to FDS management that can be used by researchers and practitioners to exploit the opportunities arising from the evolving finance landscape."
+          title: "High-Performance PostgreSQL: A Dive Into the Internals",
+          category: "Blog",
+          link:
+            "https://www.linkedin.com/pulse/high-performance-postgresql-dive-internals-tamer-khraisha-phd/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_post_details%3BZYY%2B8yTXQjSu1JTso%2FH1bg%3D%3D",
+          date: "January 14, 2023",
+          summary: "An analysis of the internals and features of Postgres",
+          tag: "SQL Databases"
+        },
+        {
+          title:
+            "The Problem of Data Snooping in Financial Analysis and Machine Learning",
+          category: "Blog",
+          link:
+            "https://www.linkedin.com/pulse/problem-data-snooping-financial-analysis-machine-tamer-khraisha-phd/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_post_details%3BZYY%2B8yTXQjSu1JTso%2FH1bg%3D%3D",
+          date: "October 16, 2022",
+          summary: "Analysis of the problem of false discoveries in finance",
+          tag: "AI & Finance"
+        },
+        {
+          title: "The Economics of Cloud Computing",
+          category: "Blog",
+          link:
+            "https://www.linkedin.com/pulse/economics-cloud-computing-tamer-khraisha-phd/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_post_details%3BZYY%2B8yTXQjSu1JTso%2FH1bg%3D%3D",
+          date: "October 8, 2022",
+          summary: "Analysis of the economics of cloud computing",
+          tag: "Cloud Economics"
+        },
+        {
+          title: "How does Python work?",
+          category: "Blog",
+          link:
+            "https://www.linkedin.com/pulse/how-does-python-work-tamer-khraisha-phd/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_post_details%3BZYY%2B8yTXQjSu1JTso%2FH1bg%3D%3D",
+          date: "September 24, 2022",
+          summary: "A dive into the internals of Python",
+          tag: "Software Engineering"
+        },
+        {
+          title: "SQL vs NoSQL: How to choose a database for your application?",
+          category: "Blog",
+          link:
+            "https://www.linkedin.com/pulse/sql-vs-nosql-how-choose-database-your-application-tamer-khraisha-phd/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_post_details%3BZYY%2B8yTXQjSu1JTso%2FH1bg%3D%3D",
+          date: "September 17, 2022",
+          summary:
+            "Analysis of the main differences and features of SQL and NoSQL",
+          tag: "Database Design"
+        },
+        {
+          title:
+            "Are Best Practices Required Practices in Software and Machine Learning Engineering?",
+          category: "Blog",
+          link:
+            "https://www.linkedin.com/pulse/best-practices-required-software-machine-learning-tamer-khraisha-phd/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_post_details%3BZYY%2B8yTXQjSu1JTso%2FH1bg%3D%3D",
+          date: "September 3, 2022",
+          summary: "Opinion piece on the importance of industry best practices",
+          tag: "Software Engineering"
+        },
+        {
+          title: "Workflow-Oriented Software Architectures",
+          category: "Blog",
+          link:
+            "https://www.linkedin.com/pulse/workflow-oriented-software-architectures-tamer-khraisha-phd/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_post_details%3BZYY%2B8yTXQjSu1JTso%2FH1bg%3D%3D",
+          date: "August 22, 2022",
+          summary: "An analysis of the main workflow technologies",
+          tag: "Software Engineering"
+        },
+        {
+          title:
+            "The Nexus Between Machine Learning and Business Value Creation",
+          category: "Blog",
+          link:
+            "https://www.linkedin.com/pulse/nexus-between-machine-learning-business-value-tamer-khraisha-phd/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_post_details%3BZYY%2B8yTXQjSu1JTso%2FH1bg%3D%3D",
+          date: "October 24, 2020",
+          summary: "Economic analysis of Machine Learning",
+          tag: "AI/ML"
+        },
+        {
+          title: "Industry Applications of Network Science and Graph Theory",
+          category: "Blog",
+          link:
+            "https://www.linkedin.com/pulse/industry-applications-network-science-graph-tamer-khraisha-phd/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_post_details%3BZYY%2B8yTXQjSu1JTso%2FH1bg%3D%3D",
+          date: "August 22, 2020",
+          summary: "Overview of the application of Network Science in industry",
+          tag: "Network Science"
         }
       ]
     };

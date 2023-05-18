@@ -115,8 +115,7 @@ export default {
         { name: "home", icon: "mdi-home" },
         { name: "experience", icon: "mdi-briefcase" },
         { name: "skills", icon: "mdi-code-tags" },
-        { name: "academia", icon: "mdi-school" },
-        { name: "blog", icon: "mdi-post" }
+        { name: "academia", icon: "mdi-school" }
       ]
     };
   }
