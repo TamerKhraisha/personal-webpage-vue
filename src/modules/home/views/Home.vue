@@ -13,7 +13,6 @@
 </template>
 
 <script>
-const AboutMe = () => import("../sections/AboutMe");
 const Contact = () => import("../sections/Contact");
 const LatestUpdates = () => import("../sections/LatestUpdates");
 const Quotes = () => import("../sections/Quotes");
